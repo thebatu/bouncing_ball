@@ -1,0 +1,22 @@
+var velocity.x:number = 5.2;
+var velocity.y:number = 5.2;
+
+
+stage.addEventListner(Event.ENTER_FRAME, updateBall);
+
+function updateBall(event:Event):void{
+
+	ball_mc.x = velocity.x;
+	ball_mc.y = velocity.y;
+
+	if (ball_mc.x > stage.stagewidth - ball_mc.height / 2 || ball_mc.x < 0 + ball_mc.width / 2){
+
+		velocity.x *= -1;
+		velocity.y *= -1;
+	}
+
+	else if (ball_mc.y > stage.stageHeight - ball_mc.height / 2 || ball_mc.y < 0 + ball_mc.width / 2){
+			
+		velY *= -1;
+	}
+}
